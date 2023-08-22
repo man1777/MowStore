@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<title>NAV</title>
+</head>
+
+<body>
+	<nav class="navbar  navbar-expand-lg navbar-light bg-light" th:fragment="navbar" height="100%">
+		<div class="container-fluid">
+			<a class="navbar-brand" th:href="@{/home}">
+				<img src="https://mowgarden.com/wp-content/uploads/2021/03/logo-MOW-v2.png" alt="" height="30px">
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link ms-3 " aria-current="page" th:href="@{/home}" style="color:#224229 ">Trang
+							chủ</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link ms-3 " aria-current="page" th:href="@{|/product/list?cid=1000|}"
+							style="color:#224229 ">Cây trong
+							nhà</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link ms-3" th:href="@{|/product/list?cid=2000|}" style="color:#224229 ">Cây ngoài
+							trời</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link ms-3" th:href="@{|/product/list?cid=3000|}" style="color:#224229 ">Chậu
+							cây</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link ms-3" th:href="@{|/product/list?cid=4000|}" style="color:#224229 ">Phụ
+							kiện</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link ms-3" style="color:#224229 " href="#">Hướng dẫn</a>
+
+				</ul>
+				<ul class="nav navbar-nav">
+					<th:block th:if="${#request.remoteUser}">
+						<li><a th:href="@{/security/logoff}">Sign Out</a></li>
+						<li><a th:href="@{/order/list}">Your Orders</a></li>
+						<li >
+							<a th:href="@{/admin/home/index}">Administration</a>
+						</li>
+					</th:block>
+				</ul>
+				<form class="d-flex">
+					<a href="/cart/view" id="shopping-bag" class="shopping-bag"><svg xmlns="http://www.w3.org/2000/svg"
+							width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+							stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+							class="feather feather-shopping-bag">
+							<path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+							<line x1="3" y1="6" x2="21" y2="6"></line>
+							<path d="M16 10a4 4 0 0 1-8 0"></path>
+						</svg></a>
+					<a>{{cart.count}}</a>
+			</div>
+			<th:block th:unless="${#request.remoteUser}">
+				<a th:href="@{/dangnhap}"><img src="https://cdn-icons-png.flaticon.com/128/747/747376.png" width="50px"
+						alt=""></a>
+			</th:block>
+			<ul th:if="${#request.remoteUser}" class="nav navbar-nav navbar-right">
+				<li><a href="#">Welcome [[${#request.remoteUser}]]</a></li>
+			</ul>
+			</form>
+		</div>
+		</div>
+	</nav>
+	<script src="/assets/js/shoppinng-cart-app.js"></script>
+</body>
+
+</html>

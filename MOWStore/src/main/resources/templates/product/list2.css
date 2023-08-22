@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap');
+
+body{
+  background-color: #DFE7EF;
+}
+
+.container{
+  margin-top: 50px;
+}
+
+h1, .card-title, a, #toast{
+  font-family: 'Roboto', sans-serif;
+}
+
+h1{
+  color: #5C7CFA;
+}
+
+.first-image{
+  height: 100%;
+  width: 100%;
+  margin-right: 50px;
+}
+
+.card{
+  box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
+  border-radius: 15px;
+  transition: transform .2s;
+  padding-top: 30px;
+}
+
+.card-body{
+  padding: 10px;
+  margin-top: -70px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease-in-out;
+}
+
+.heart{
+  color: #989898;
+  margin-top: 15px;
+  margin-left: 230px;
+  font-size: 25px;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  padding: 0px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.heart-active{
+  color: #C50707;
+}
+
+.heart:hover{
+  color: red;
+  background-color: #f9f9f9;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease-in-out;
+}
+
+.shopping-bag{
+    color: #989898;
+    margin-top: 200px;
+    margin-left: 5px;
+    font-size: 22px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    padding: 0px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+.shopping-bag-active{
+    color: green;
+}
+  
+.shopping-bag:hover{
+    color: green;
+    background-color: #f9f9f9;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease-in-out;
+}
+
+.card-body a{
+  visibility: hidden;
+}
+
+.heart{
+    visibility: hidden;
+}
+.shopping-bag{
+    visibility: hidden;
+}
+
+.card:hover > .heart{
+  visibility: visible;
+}
+
+.card:hover > .shopping-bag{
+    visibility: visible;
+}
+
+.card:hover > .card-body > a{
+    visibility: visible;
+  }
+
+.card:hover{
+  transform: scale(1.02);
+}
+
+.card:hover > .card-body {
+  margin-top: -80px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+  
+.two { width: 15.33%; }
+
+.pagination{
+  padding: 30px 430px;
+}
+
+.pagination ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.pagination a{
+  display: inline-block;
+  padding: 10px 18px;
+  color: #222;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.p2 .is-active li{
+  font-weight: bold;
+  border-bottom: 3px solid #2ecc71;
+}

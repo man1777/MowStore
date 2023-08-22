@@ -1,0 +1,30 @@
+.banner{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+    color: aliceblue;
+    padding-top: 20px;
+    height: 70px;
+    background-color: rgb(17, 244, 85);
+    
+}
+h3{
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+#row{
+    padding-top: 40px;
+    background-color:rgb(248, 243, 231) ;
+    padding-bottom: 40px;
+}
+label{
+    font-weight: 600;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}

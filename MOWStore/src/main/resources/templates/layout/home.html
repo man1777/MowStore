@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/layout.html ::dynamic(~{::body})}" >
+    <head>
+        <meta charset="utf-8">
+        <title>NAV</title>
+    </head>
+
+    <body>
+      <main >
+    <div class="container-fuild">
+        <div class="background-theme">
+            <img class="img" src="https://mowgarden.com/wp-content/uploads/2022/09/mowgarden-shop-ban-cay-canh.jpg"
+                height="650px" width="100%">
+            <div class="text-box">
+                <div class="title">
+                    Tận hưởng không gian sống xanh
+                </div>
+                <div class="content">
+                    Bổ sung thêm cây xanh là một cách đơn giản nhất để tạo ra sự thoải mái cho không gian của bạn, giúp
+                    mang lại hiệu quả công việc và thư giản mỗi khi trở về
+                </div>
+                <button class="btn btn-outline-success ms-5 mt-5"
+                    style="border: 2px solid;border-radius: 20px;width: 120px;font-size: 25px; color:#224229;font-weight: 600;">Liên
+                    hệ</button>
+                <button class="btn btn-success ms-3 mt-5"
+                    style="border: 2px solid green;border-radius: 20px;width: 150px;font-size: 25px; color:#fcfffd;font-weight: 600;">Mua
+                    ngay</button>
+            </div>
+        </div>
+    </div>
+    <div class="container-fuild">
+        <div class="danhmucsanpham">
+            <div class="title-danhmucsp">
+                DANH MỤC SẢN PHẨM
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div class="card" style="width: 350px;">
+                        <img src="https://mowgarden.com/wp-content/uploads/2022/09/cay-canh-de-trong-400x400.jpg"
+                            class="card-img-top" alt="...">
+                        <button class="btn btn-success">CÂY VĂN PHÒNG</button>
+                    </div>
+
+                </div>
+                <div class="col-3">
+                    <div class="card" style="width: 350px;">
+                        <img src="https://mowgarden.com/wp-content/uploads/2022/09/cay-trong-hanh-lang-loi-di-400x400.jpg"
+                            class="card-img-top" alt="...">
+                        <button class="btn">CÂY DỄ CHĂM</button>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card" style="width: 350px;">
+                        <img src="https://mowgarden.com/wp-content/uploads/2022/09/cay-kieng-la-trong-nha-400x400.jpg"
+                            class="card-img-top" alt="...">
+                        <button class="btn">CÂY PHONG THỦY</button>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card" style="width: 350px;">
+                        <img src="https://mowgarden.com/wp-content/uploads/2022/09/cay-canh-de-ban-400x400.jpg"
+                            class="card-img-top" alt="...">
+                        <button class="btn">CÂY ĐỂ BÀN</button>
+                    </div>
+                </div>
+                <div class="col-3 pt-4">
+                    <div class="card" style="width: 350px;">
+                        <img src="https://mowgarden.com/wp-content/uploads/2022/09/cay-canh-thuy-canh-400x400.jpg"
+                            class="card-img-top" alt="...">
+                        <button class="btn">CÂY TRỒNG NƯỚC</button>
+                    </div>
+                </div>
+                <div class="col-3 pt-4">
+                    <div class="card" style="width: 350px;">
+                        <img src="https://mowgarden.com/wp-content/uploads/2022/09/cay-canh-cao-cap-trong-nha-400x400.jpg"
+                            class="card-img-top" alt="...">
+                        <button class="btn">CÂY CAO CẤP</button>
+                    </div>
+                </div>
+                <div class="col-3 pt-4">
+                    <div class="card" style="width: 350px;">
+                        <img src="https://mowgarden.com/wp-content/uploads/2022/09/chau-dat-nung-dep-400x400.jpg"
+                            class="card-img-top" alt="...">
+                        <button class="btn">CÂY ĐẤT NUNG</button>
+                    </div>
+                </div>
+                <div class="col-3 pt-4">
+                    <div class="card" style="width: 350px;">
+                        <img src="https://mowgarden.com/wp-content/uploads/2021/05/chau-cay-trong-nha-dep-380x400.jpg"
+                            height="350px" class="card-img-top" alt="...">
+                        <button class="btn">CHẬU XI MĂNG</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fuild">
+        <div class="sanphammoi">
+            <div class="title-sanphammoi">
+                SẢN PHẨM MỚI
+            </div>
+            <div class="row ps-5">
+                <div class="col-3 mt-5" th:each="p: ${items}" >
+                    <div class="card" style="width: 350px;">
+                        <a href="#"> <img
+                                th:src="@{|/assets/images/${p.image}|}"
+                                class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+
+                            <a th:href="@{|/product/detail/${p.id}|}" class="card-text"
+                                style="text-decoration: none;color: #224229;font-size: 16px;font-weight: 550;">[[${p.name}]]</a>
+                            <p style="font-size: 25px;font-weight: 600; color: darkgreen;margin-top: 40px;">[[${p.price}]]đ</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="footer-sanphammoi">
+                <a href="#" style="text-decoration: none; color: black;">
+                    Xem thêm
+                </a>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="container-fuild">
+        <div class="chonchungtoi">
+            <div class="anh">
+                <img src="https://mowgarden.com/wp-content/uploads/2022/08/vuon-cay-trong-nha-mowgarden.jpg"
+                    width="600px" height="700px" alt="">
+            </div>
+            <div class="text-chonchungtoi">
+                <div class="lydo">Lý do chọn MOW Garden?</div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="col-3 ">
+                                <img src="https://mowgarden.com/wp-content/uploads/2022/01/soil.png" width="50px"
+                                    alt="">
+                            </div>
+                            <div class="col-8 ms-2 ">
+                                <h4>TUYỂN CHỌN</h4>
+                                <div class="text1-chonchungtoi mt-4">
+                                    <p>Mọi cây xanh đều phải được chọn lọc kỹ lưỡng</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="col-3 ">
+                                <img src="https://mowgarden.com/wp-content/uploads/2021/04/018-watering.png" width="50px"
+                                    alt="">
+                            </div>
+                            <div class="col-8 ms-2 ">
+                                <h4>ĐA DẠNG</h4>
+                                <div class="text1-chonchungtoi mt-4">
+                                    <p>Dễ dàng tìm được sản phẩm mà bạn mong muốn</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="col-3 ">
+                                <img src="https://mowgarden.com/wp-content/uploads/2022/01/gardening-1.png" width="50px"
+                                    alt="">
+                            </div>
+                            <div class="col-8 ms-2 ">
+                                <h4>ĐỒNG HÀNH</h4>
+                                <div class="text1-chonchungtoi mt-4">
+                                    <p>Luôn đồng hành và giúp đỡ bạn về mặt kỹ thuật</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-4 mt-5">
+                        <div class="row">
+                            <div class="col-3 ">
+                                <img src="https://mowgarden.com/wp-content/uploads/2022/01/gardener.png" width="50px"
+                                    alt="">
+                            </div>
+                            <div class="col-8 ms-2 ">
+                                <h4> CHUẨN</h4>
+                                <div class="text1-chonchungtoi mt-4">
+                                    <p>Sử dụng hình ảnh chụp thực tế giúp dễ hình dung</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-4 mt-5">
+                        <div class="row">
+                            <div class="col-3 ">
+                                <img src="https://mowgarden.com/wp-content/uploads/2022/01/gardening-2.png" width="50px"
+                                    alt="">
+                            </div>
+                            <div class="col-8 ms-2 ">
+                                <h4>TIN CẬY</h4>
+                                <div class="text1-chonchungtoi mt-4">
+                                    <p>Gửi ảnh thực tế và cụ thể trước khi giao hàng</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-4 mt-5">
+                        <div class="row">
+                            <div class="col-3 ">
+                                <img src="https://mowgarden.com/wp-content/uploads/2021/04/006-turf.png" width="50px"
+                                    alt="">
+                            </div>
+                            <div class="col-8 ms-2 ">
+                                <h4>CẠNH TRANH</h4>
+                                <div class="text1-chonchungtoi mt-4">
+                                    <p>Tối ưu hóa ngân sách nhờ mức giá cực kì cạnh tranh</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+    </body>
+</html>
